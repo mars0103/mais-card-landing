@@ -232,6 +232,8 @@ body[data-theme='yellow'] .reward { color: #0D0D0D; }
 .footer__col p { line-height: 1.75; opacity: 0.85; }
 .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 4rem; padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.15); font: 400 0.75rem/1.5 var(--font-b); color: rgba(255, 255, 255, 0.6); }
 .footer__bottom a { text-decoration: underline; text-underline-offset: 3px; }
+.footer__seal { position: relative; margin-left: auto; min-height: 52px; }
+.footer__seal-link { position: absolute; inset: 0; z-index: 1; cursor: pointer; }
 
 
 .fallback-cards, .fallback-band { display: none; }
