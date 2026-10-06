@@ -1,0 +1,11 @@
+node_modules
+dist
+*.log
+.DS_Store
+.vercel
+/*.pdf
+/*.png
+/*.glb
+/blender/
+public/models/*
+!public/models/band-meshy.glb

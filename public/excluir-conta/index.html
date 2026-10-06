@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Excluir conta · MAIS Card</title>
+<meta name="description" content="Solicite a exclusão da sua conta MAIS Card e dos seus dados pessoais." />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/legal.css" />
+</head>
+<body>
+  <header class="legal-header">
+    <a href="/" aria-label="MAIS Card, ir para o início"><img src="/brand/logo-principal.svg" alt="MAIS Card" width="132" height="45" /></a>
+    <a class="legal-back" href="/">&larr; Voltar ao site</a>
+  </header>
+
+  <div class="legal-hero">
+    <div class="legal-hero__in">
+      <p class="legal-kicker">Termos e políticas · MAIS Card</p>
+      <h1>Excluir conta</h1>
+      <p class="legal-meta">Exclusão da conta e dos dados pessoais</p>
+    </div>
+  </div>
+
+  <main class="legal-main">
+    <article class="legal-doc">
+      <div class="legal-body">
+<h2>Excluir minha conta</h2>
+<p>Solicite a exclusão da sua conta MAIS Card e dos seus dados pessoais, mesmo sem acesso ao app.</p>
+
+<h2>Como funciona</h2>
+<ul>
+<li>Preencha o formulário abaixo com os dados usados no cadastro. Ao enviar, seu aplicativo de e-mail abre com uma mensagem pronta para o nosso time de privacidade.</li>
+<li>Nossa equipe confirma sua identidade e verifica se há fatura em aberto, saldo na Carteira+ ou +Coins a resgatar.</li>
+<li>Concluída a verificação, a conta e o cartão são encerrados e seus dados pessoais são excluídos, exceto os que a lei nos obriga a guardar (por exemplo, registros de transações, pelo prazo legal).</li>
+<li>A exclusão é definitiva e não pode ser desfeita.</li>
+</ul>
+<p>Se ainda tem acesso ao app, também pode pedir a exclusão em <strong>Perfil</strong> → <strong>Atendimento</strong>.</p>
+
+<h2>Solicitar exclusão</h2>
+<form class="legal-form" id="delete-form">
+  <div class="legal-field">
+    <label for="df-nome">Nome completo</label>
+    <input id="df-nome" name="nome" type="text" autocomplete="name" required />
+  </div>
+  <div class="legal-field">
+    <label for="df-email">E-mail do cadastro</label>
+    <input id="df-email" name="email" type="email" autocomplete="email" required />
+  </div>
+  <div class="legal-field">
+    <label for="df-cpf">CPF <span>(opcional)</span></label>
+    <input id="df-cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" />
+  </div>
+  <div class="legal-field">
+    <label for="df-celular">Celular <span>(opcional)</span></label>
+    <input id="df-celular" name="celular" type="tel" autocomplete="tel" />
+  </div>
+  <div class="legal-field">
+    <label for="df-motivo">Motivo <span>(opcional)</span></label>
+    <textarea id="df-motivo" name="motivo" rows="3"></textarea>
+  </div>
+  <p class="legal-form-note">Ao enviar, você confirma que deseja encerrar sua conta MAIS Card. Os dados informados serão usados apenas para localizar e confirmar o cadastro, conforme a nossa <a href="/privacidade">Política de privacidade</a>.</p>
+  <button type="submit" class="legal-submit">Solicitar exclusão da conta</button>
+  <p class="legal-form-status" id="df-status" role="status" aria-live="polite"></p>
+</form>
+      </div>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <p>© 2026 MAIS Card · MAIS UP Instituição de Pagamento LTDA · CNPJ 69.105.317/0001-99 · Av. Portugal, 1148 – Condomínio Orion Business – Setor Marista – Goiânia/GO – CEP 74150-030 · <a href="/">soumaiscard.com.br</a></p>
+    <nav class="legal-footer-nav" aria-label="Outros termos">
+      <a href="/termos">Termos de uso</a>
+      <a href="/privacidade">Política de privacidade</a>
+      <a href="/termos/cartao">Termos do cartão</a>
+      <a href="/termos/carteira">Termos da Carteira+</a>
+      <a href="/termos/lgpd">Termos de LGPD</a>
+      <a href="/termos/comunicacoes">Termos de comunicações</a>
+      <a href="/excluir-conta" aria-current="page">Excluir conta</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById('delete-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var body = [
+        'Nome completo: ' + f.nome.value,
+        'E-mail do cadastro: ' + f.email.value,
+        'CPF: ' + (f.cpf.value || '-'),
+        'Celular: ' + (f.celular.value || '-'),
+        'Motivo: ' + (f.motivo.value || '-'),
+      ].join('\n');
+      var mailto = 'mailto:dpo@soumaiscard.com.br'
+        + '?subject=' + encodeURIComponent('Solicitação de exclusão de conta - MAIS Card')
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+      document.getElementById('df-status').textContent = 'Abrindo seu aplicativo de e-mail com a solicitação preenchida...';
+    });
+  </script>
+</body>
+</html>
