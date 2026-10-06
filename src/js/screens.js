@@ -114,7 +114,7 @@ const money = (n) => n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maxim
 export const screens = {
   root: null,
   current: null,
-  parcelado: { value: 300, n: 6 },
+  parcelado: { value: 150, n: 6 },
 
   mount(viewport) {
     this.root = viewport;

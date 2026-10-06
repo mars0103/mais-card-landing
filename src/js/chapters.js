@@ -251,7 +251,7 @@ function initTour() {
   };
   range.addEventListener('input', sync);
   chips.forEach((c) => c.addEventListener('click', () => { n = Number(c.dataset.n); sync(); }));
-  range.style.setProperty('--p', '100%');
+  range.style.setProperty('--p', `${((150 - 25) / 275) * 100}%`);
 
   const btn = $('#copy-code'), label = btn.querySelector('span');
   btn.addEventListener('click', async () => {
