@@ -16,9 +16,10 @@
   .menu-toggle { display: flex; margin-left: auto; }
   .hud-nav {
     position: fixed; inset: 0; transform: none; z-index: -1; background: var(--bg); flex-direction: column; justify-content: center;
-    align-items: flex-start; gap: 6px; padding: 0 var(--gutter); opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0s 0.4s;
+    align-items: stretch; gap: 0; padding: 0 var(--gutter); opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0s 0.4s;
   }
-  .hud-nav a { font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; white-space: normal; }
+  .hud-nav a { font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; white-space: normal; text-align: right; display: block; padding: 16px 0; border-top: 1px solid rgba(13, 13, 13, 0.18); }
+  .hud-nav a:last-child { border-bottom: 1px solid rgba(13, 13, 13, 0.18); }
   .hud-nav a::after { background: var(--ink); }
   body.menu-open .hud-nav { z-index: 40; }
   body.menu-open .hud-badge { position: relative; z-index: 41; }
