@@ -118,6 +118,7 @@
 
   
   .cards3 { grid-template-columns: 1fr; gap: 12px; }
+  .roadmap { grid-template-columns: 1fr; gap: 12px; }
   .card3 { min-height: 0; padding: 1.3rem 1.4rem; display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; align-items: center; }
   .card3__ico { grid-row: span 2; margin: 0; width: 48px; height: 48px; }
   .card3 h3 { font-size: 1.2rem; margin: 0; }

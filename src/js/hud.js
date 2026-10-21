@@ -10,6 +10,7 @@ export const CHAPTERS = [
   { id: 'pague', title: 'Pague com um toque' },
   { id: 'app', title: 'App tour' },
   { id: 'seguranca', title: 'Segurança e atendimento' },
+  { id: 'novidades', title: 'Novidades' },
   { id: 'comece', title: 'Comece agora' },
 ];
 
@@ -63,7 +64,7 @@ export function setChapter(i) {
   document.getElementById('chapter-n').textContent = `${pad(i)} / ${String(CHAPTERS.length).padStart(2, '0')}`;
   document.getElementById('chapter-t').textContent = c.title;
   document.querySelectorAll('#hud-rail button').forEach((b) => b.classList.toggle('is-active', Number(b.dataset.i) === i));
-  document.body.classList.toggle('is-cta', i === 6);
+  document.body.classList.toggle('is-cta', c.id === 'comece');
   setActiveLink(i === 4 && state.beats.tour === 4 ? '#coins' : '#' + c.id);
 }
 

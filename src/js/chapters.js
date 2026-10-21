@@ -5,15 +5,20 @@ import { setChapter, setActiveLink } from './hud.js';
 import { screens } from './screens.js';
 import { config } from '../config.js';
 
-const SCENES = ['hero', 'manifesto', 'vantagens', 'pague', 'tour', 'seguranca', 'cta'];
-const THEMES = ['yellow', 'black', 'yellow', 'black', 'white', 'black', 'yellow'];
-const TOUR_SCREENS = ['identidade', null, 'parcelado', 'carteira', 'coins', 'indique'];
+const SCENES = ['hero', 'manifesto', 'vantagens', 'pague', 'tour', 'seguranca', 'novidades', 'cta'];
+const THEMES = ['yellow', 'black', 'yellow', 'black', 'white', 'black', 'white', 'yellow'];
+const TOUR_SCREENS = [
+  'identidade', null, 'parcelado', 'carteira', 'coins', 'indique',
+  'trocarcoins', 'saque', 'contamais', 'transferencias', 'adicionarsaldo', 'linkpagamento', 'cofre', 'recarga', 'boletos',
+];
+const TOUR_BEATS = TOUR_SCREENS.length;
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const beatOf = (p, n) => Math.min(n - 1, Math.floor(p * n));
 
-const tourTheme = (b) => ['white', state.color === 'preto' ? 'yellow' : 'black', 'white', 'black', 'yellow', 'black'][b];
+const TOUR_THEMES = ['white', '', 'white', 'black', 'yellow', 'black', 'yellow', 'white', 'black', 'yellow', 'white', 'black', 'yellow', 'white', 'black'];
+const tourTheme = (b) => (b === 1 ? (state.color === 'preto' ? 'yellow' : 'black') : TOUR_THEMES[b]);
 const setTheme = (t) => { if (document.body.dataset.theme !== t) document.body.dataset.theme = t; };
 
 const CHIPS = [
@@ -38,6 +43,39 @@ const CHIPS = [
   [
     { t: 'Toque no código para copiar', i: 'check', k: 'ok', x: '-68%', y: '30%' },
     { t: 'Você recebe R$ 10,00 na Carteira+', i: 'wallet', k: 'y', x: '-54%', y: '80%' },
+  ],
+  [
+    { t: 'Direto na Carteira+', i: 'wallet', k: 'y', x: '-70%', y: '16%' },
+    { t: 'Sem taxa de conversão', i: 'shield', k: 'ok', x: '-50%', y: '82%' },
+  ],
+  [
+    { t: 'Pix 24 horas por dia', i: 'pix', k: 'y', x: '-68%', y: '18%' },
+    { t: 'Sem tarifa de saque', i: 'cash', k: 'ok', x: '-46%', y: '82%' },
+  ],
+  [
+    { t: 'Agência e conta só suas', i: 'bank', k: 'y', dark: true, x: '-72%', y: '16%' },
+    { t: 'Transferência grátis entre contas MAIS', i: 'send', k: 'y', x: '-52%', y: '84%' },
+  ],
+  [
+    { t: 'Pix pra qualquer chave', i: 'pix', k: 'y', x: '-66%', y: '20%' },
+  ],
+  [
+    { t: 'QR Code gerado na hora', i: 'qrcode', k: 'y', x: '-70%', y: '18%' },
+    { t: 'Saldo liberado na confirmação', i: 'check', k: 'ok', x: '-48%', y: '84%' },
+  ],
+  [
+    { t: 'Link pronto em segundos', i: 'link', k: 'y', x: '-64%', y: '20%' },
+  ],
+  [
+    { t: 'Crie metas e acompanhe o progresso', i: 'trophy', k: 'y', dark: true, x: '-74%', y: '16%' },
+    { t: 'Resgate quando quiser', i: 'vault', k: 'y', x: '-48%', y: '84%' },
+  ],
+  [
+    { t: 'Todas as operadoras', i: 'phone', k: 'y', x: '-62%', y: '20%' },
+  ],
+  [
+    { t: 'Leitura automática do código', i: 'barcode', k: 'y', x: '-72%', y: '18%' },
+    { t: 'Pagamento confirmado na hora', i: 'check', k: 'ok', x: '-48%', y: '84%' },
   ],
 ];
 
@@ -228,7 +266,7 @@ function initTour() {
       setActiveLink(b === 4 ? '#coins' : '#app');
     }
   };
-  ScrollTrigger.create({ trigger: tour, start: 'top top', end: 'bottom bottom', onUpdate: (s) => set(beatOf(s.progress, 6)) });
+  ScrollTrigger.create({ trigger: tour, start: 'top top', end: 'bottom bottom', onUpdate: (s) => set(beatOf(s.progress, TOUR_BEATS)) });
   set(0, true);
 
   $$('.swatch').forEach((btn) => btn.addEventListener('click', () => {
@@ -260,6 +298,30 @@ function initTour() {
     screens.flashCopied();
     setTimeout(() => (label.textContent = 'Copiar'), 1800);
   });
+
+  wireScreenChips('.js-tc-chips b', (b) => screens.setTrocar(Number(b.dataset.n), true));
+  wireScreenChips('.js-sq-chips b', (b) => screens.setSaque(Number(b.dataset.n)));
+  wireScreenChips('.js-as-chips b', (b) => screens.setAddSaldo(Number(b.dataset.n), true));
+  wireScreenChips('.js-rc-val b', (b) => screens.setRecarga(Number(b.dataset.n)));
+  wireScreenChips('.js-rc-op b', (b) => screens.setRecarga(null, b.textContent));
+
+  $$('.js-tr-contacts button').forEach((b) => b.addEventListener('click', () => screens.setTransfer(b.dataset.name)));
+  $('.js-tr-btn')?.addEventListener('click', () => screens.sendTransfer());
+  $('.js-rc-btn')?.addEventListener('click', () => {
+    const t = $('.js-rc-toast');
+    gsap.fromTo(t, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(1.6)' });
+    gsap.to(t, { opacity: 0, y: -10, duration: 0.4, delay: 1.8 });
+  });
+
+  const lp = $('.js-lp-copy');
+  lp?.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText('https://mais.cc/cobrar/8f2k'); } catch {  }
+    screens.flashCopiedLink();
+  });
+}
+
+function wireScreenChips(sel, onPick) {
+  $$(sel).forEach((b) => b.addEventListener('click', () => onPick(b)));
 }
 
 function countCoins() {
@@ -277,6 +339,14 @@ function initReveals() {
   gsap.from('.sec__title, #seguranca .kicker', {
     y: 40, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
     scrollTrigger: { trigger: '#seguranca', start: 'top 70%', toggleActions: 'play none none reverse' },
+  });
+  gsap.from('#novidades .sec__title, #novidades .kicker, #novidades .lead', {
+    y: 40, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
+    scrollTrigger: { trigger: '#novidades', start: 'top 70%', toggleActions: 'play none none reverse' },
+  });
+  gsap.from('.roadmap__item', {
+    y: 50, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+    scrollTrigger: { trigger: '.roadmap', start: 'top 85%', toggleActions: 'play none none reverse' },
   });
   gsap.from('.cta__copy > *', {
     y: 40, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',

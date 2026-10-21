@@ -57,6 +57,12 @@
     <symbol id="i-vault" viewBox="0 0 24 24"><rect width="18" height="16" x="3" y="4" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M12 9v6M9 12h6"/></symbol>
     <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="15" r="6"/><path d="M8.5 2h7l-2.2 7h-2.6z"/></symbol>
     <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="m3 10 9-7 9 7"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-qrcode" viewBox="0 0 24 24"><rect width="6" height="6" x="3" y="3" rx="1"/><rect width="6" height="6" x="15" y="3" rx="1"/><rect width="6" height="6" x="3" y="15" rx="1"/><path d="M15 15h2v2h-2z"/><path d="M19 15h2v2h-2z"/><path d="M15 19h2v2h-2z"/><path d="M19 19h2v2h-2z"/></symbol>
+    <symbol id="i-barcode" viewBox="0 0 24 24"><path d="M3 5v14"/><path d="M7 5v14"/><path d="M11 5v14"/><path d="M15 5v14"/><path d="M19 5v14"/><path d="M21 5v14"/></symbol>
   </defs>
 </svg>
 
@@ -154,7 +160,7 @@
                   <div class="h-tile"><span class="h-ico"><svg class="i"><use href="#i-doc"/></svg></span><b>Extrato da Carteira</b><small>Veja todas as movimentações</small></div>
                   <div class="h-tile"><span class="h-ico"><svg class="i"><use href="#i-coins"/></svg></span><b>+Coins</b><small>Suas moedas e recompensas</small></div>
                   <div class="h-tile"><span class="h-ico"><svg class="i"><use href="#i-refresh"/></svg></span><b>Trocar +Coins</b><small>Troque suas moedas por dinheiro</small></div>
-                  <div class="h-tile is-off"><span class="h-ico"><svg class="i"><use href="#i-vault"/></svg></span><b>+Cofre</b><small>Em Breve</small></div>
+                  <div class="h-tile"><span class="h-ico"><svg class="i"><use href="#i-vault"/></svg></span><b>Cofre+</b><small>Guarde com metas</small></div>
                 </div>
                 <div class="h-banners">
                   <div class="h-ban h-ban--p"><b>+Coins</b><small>Veja seu saldo</small></div>
@@ -268,7 +274,7 @@
   </section>
 
   
-  <section id="app" class="chapter chapter--pin tour" style="--scroll:900vh" data-theme="white" data-beats="6" data-chapter="4" data-title="App tour">
+  <section id="app" class="chapter chapter--pin tour" style="--scroll:2250vh" data-theme="white" data-beats="15" data-chapter="4" data-title="App tour">
     <span id="coins" class="anchor-offset" data-beat-anchor="4"></span>
     <div class="stage tour__stage">
       <div class="tour__copy" id="tour-copy">
@@ -351,6 +357,99 @@
             <li><span>1</span>Compartilhe</li><li><span>2</span>Amigo se cadastra</li><li><span>3</span>Emite o cartão</li><li class="is-last"><span>4</span>Você recebe</li>
           </ol>
         </article>
+
+        <article class="beat" data-beat="6" aria-labelledby="b6">
+          <p class="kicker">Trocar +Coins</p>
+          <h2 class="display beat__title" id="b6">Transforme<br />+Coins em dinheiro.</h2>
+          <p class="lead">Escolha quantas +Coins quer trocar e o valor cai direto na sua Carteira+.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-refresh"/></svg></span><div><h3>Troque quando quiser</h3><p>Sem prazo mínimo e sem burocracia.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-wallet"/></svg></span><div><h3>Cai na Carteira+</h3><p>O valor fica disponível na hora, pronto pra usar.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-shield"/></svg></span><div><h3>Sem taxa escondida</h3><p>A conversão que você vê é a que você recebe.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="7" aria-labelledby="b7">
+          <p class="kicker">Saque via Pix</p>
+          <h2 class="display beat__title" id="b7">Seu dinheiro,<br />na sua conta, na hora.</h2>
+          <p class="lead">Peça o saque da Carteira+ e receba via Pix, todos os dias, a qualquer hora.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-pix"/></svg></span><div><h3>Pix instantâneo</h3><p>Cai na sua conta em segundos, 24 horas por dia.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-calendar"/></svg></span><div><h3>Todo dia, sem exceção</h3><p>Inclusive fins de semana e feriados.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-lock"/></svg></span><div><h3>Seguro de ponta a ponta</h3><p>Confirmação por senha ou biometria.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="8" aria-labelledby="b8">
+          <p class="kicker">Conta+</p>
+          <h2 class="display beat__title" id="b8">Uma conta,<br />dentro do mesmo app.</h2>
+          <p class="lead">Além do cartão, você tem uma conta digital completa pra centralizar sua vida financeira.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-bank"/></svg></span><div><h3>Conta digital própria</h3><p>Agência e número só seus, dentro do app MAIS.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-send"/></svg></span><div><h3>Transferências grátis</h3><p>Entre contas MAIS, sem nenhuma tarifa.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-card"/></svg></span><div><h3>Tudo em um só lugar</h3><p>Cartão, Carteira+ e Conta+ sob o mesmo login.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="9" aria-labelledby="b9">
+          <p class="kicker">Transferências</p>
+          <h2 class="display beat__title" id="b9">Pix e Conta+<br />em poucos toques.</h2>
+          <p class="lead">Mande dinheiro pra qualquer chave Pix ou pra outro cliente MAIS, sem sair do app.</p>
+          <ol class="flow">
+            <li><span>1</span>Escolha o contato</li><li><span>2</span>Confirme o valor</li><li class="is-last"><span>3</span>Pronto, na hora</li>
+          </ol>
+        </article>
+
+        <article class="beat" data-beat="10" aria-labelledby="b10">
+          <p class="kicker">Adicionar saldo</p>
+          <h2 class="display beat__title" id="b10">Recarregue sua<br />Carteira+ via Pix.</h2>
+          <p class="lead">Gere um QR Code, pague pelo seu banco e veja o saldo cair na hora.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-qrcode"/></svg></span><div><h3>QR Code na hora</h3><p>Gere o código e pague pelo seu banco.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-wallet"/></svg></span><div><h3>Cai na Carteira+</h3><p>Disponível assim que o Pix é confirmado.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-calc"/></svg></span><div><h3>Use pra tudo</h3><p>Pague, parcele ou guarde no Cofre+.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="11" aria-labelledby="b11">
+          <p class="kicker">Link de pagamento</p>
+          <h2 class="display beat__title" id="b11">Cobre quem você<br />quiser, sem maquininha.</h2>
+          <p class="lead">Gere um link de cobrança e receba o pagamento direto na sua Carteira+.</p>
+          <ol class="flow">
+            <li><span>1</span>Gere o link</li><li><span>2</span>Compartilhe</li><li class="is-last"><span>3</span>Receba na Carteira+</li>
+          </ol>
+        </article>
+
+        <article class="beat" data-beat="12" aria-labelledby="b12">
+          <p class="kicker">Cofre+</p>
+          <h2 class="display beat__title" id="b12">Guarde dinheiro<br />com um propósito.</h2>
+          <p class="lead">Crie cofres pra cada objetivo e acompanhe o quanto falta pra chegar lá.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-vault"/></svg></span><div><h3>Crie quantos cofres quiser</h3><p>Viagem, reserva de emergência, o que for.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-trophy"/></svg></span><div><h3>Rende enquanto guarda</h3><p>Seu dinheiro parado trabalha pra você.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-eye"/></svg></span><div><h3>Resgate quando quiser</h3><p>Sem carência e sem letra miúda.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="13" aria-labelledby="b13">
+          <p class="kicker">Recarga de celular</p>
+          <h2 class="display beat__title" id="b13">Chip sem internet?<br />Resolve no app.</h2>
+          <p class="lead">Recarregue qualquer operadora sem sair da Carteira+.</p>
+          <ul class="feats">
+            <li><span class="feat__ico"><svg class="i"><use href="#i-phone"/></svg></span><div><h3>Qualquer operadora</h3><p>Vivo, Claro, TIM, Oi e mais.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-cash"/></svg></span><div><h3>A partir de R$ 15</h3><p>Escolha o valor e pronto.</p></div></li>
+            <li><span class="feat__ico"><svg class="i"><use href="#i-check"/></svg></span><div><h3>Confirmação na hora</h3><p>Seu número recarregado em segundos.</p></div></li>
+          </ul>
+        </article>
+
+        <article class="beat" data-beat="14" aria-labelledby="b14">
+          <p class="kicker">Pagamento de boletos</p>
+          <h2 class="display beat__title" id="b14">Escaneou,<br />pagou.</h2>
+          <p class="lead">Aponte a câmera pro código de barras e pague sem digitar nada.</p>
+          <ol class="flow">
+            <li><span>1</span>Aponte a câmera</li><li><span>2</span>Confira os dados</li><li class="is-last"><span>3</span>Pague na hora</li>
+          </ol>
+        </article>
       </div>
 
       <div class="tour__phone" id="tour-phone">
@@ -360,7 +459,7 @@
         <ul class="tour__chips" id="tour-chips" aria-hidden="true"></ul>
       </div>
       <p class="tour__legal legal">Telas do app com dados de exemplo. Valores sujeitos à análise de crédito.</p>
-      <div class="tour__dots" id="tour-dots" aria-hidden="true"><i class="is-active"></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="tour__dots" id="tour-dots" aria-hidden="true"><i class="is-active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </section>
 
@@ -377,8 +476,59 @@
     </div>
   </section>
 
-  
-  <section id="comece" class="chapter chapter--short" data-theme="yellow" data-chapter="6" data-title="Comece agora">
+  <section id="novidades" class="chapter chapter--short" data-theme="white" data-chapter="6" data-title="Novidades">
+    <div class="stage sec__stage">
+      <p class="kicker">Sempre MAIS</p>
+      <h2 class="display sec__title">O ecossistema<br />está crescendo.</h2>
+      <p class="lead" style="max-width:34rem;margin-top:0.6rem">Novas funções chegam em fases. Acompanhe o que já está disponível no app e o que vem a seguir.</p>
+      <ol class="roadmap">
+        <li class="roadmap__item is-live">
+          <div class="roadmap__card">
+            <p class="roadmap__when">Lançamento</p>
+            <span class="roadmap__status">Disponível</span>
+            <p class="roadmap__list">Cartão de Crédito · Carteira+ · MAIS Parcelado · +Coins · Trocar +Coins · Indicação · Saque</p>
+          </div>
+        </li>
+        <li class="roadmap__item">
+          <div class="roadmap__card">
+            <p class="roadmap__when">+7 dias</p>
+            <span class="roadmap__status">Em breve</span>
+            <p class="roadmap__list">Conta+ · Transferências</p>
+          </div>
+        </li>
+        <li class="roadmap__item">
+          <div class="roadmap__card">
+            <p class="roadmap__when">+14 dias</p>
+            <span class="roadmap__status">Em breve</span>
+            <p class="roadmap__list">Adicionar saldo · Link de pagamento</p>
+          </div>
+        </li>
+        <li class="roadmap__item">
+          <div class="roadmap__card">
+            <p class="roadmap__when">+21 dias</p>
+            <span class="roadmap__status">Em breve</span>
+            <p class="roadmap__list">Cofre+</p>
+          </div>
+        </li>
+        <li class="roadmap__item">
+          <div class="roadmap__card">
+            <p class="roadmap__when">+28 dias</p>
+            <span class="roadmap__status">Em breve</span>
+            <p class="roadmap__list">Pulseira NFC · Máquina POS</p>
+          </div>
+        </li>
+        <li class="roadmap__item">
+          <div class="roadmap__card">
+            <p class="roadmap__when">+36 dias</p>
+            <span class="roadmap__status">Em breve</span>
+            <p class="roadmap__list">Recarga de celular · Pagamento de boletos</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="comece" class="chapter chapter--short" data-theme="yellow" data-chapter="7" data-title="Comece agora">
     <div class="stage cta__stage">
       <span class="deco-plus deco-plus--c" aria-hidden="true">+</span>
       <div class="cta__copy">
@@ -412,6 +562,9 @@
       <a href="#app" data-nav>MAIS Parcelado</a>
       <a href="#coins" data-nav>+Coins</a>
       <a href="#app" data-nav data-beat-link="5">Indique e ganhe</a>
+      <a href="#app" data-nav data-beat-link="8">Conta+</a>
+      <a href="#app" data-nav data-beat-link="12">Cofre+</a>
+      <a href="#novidades" data-nav>Novidades</a>
     </div>
     <div class="footer__col">
       <h3>Legal</h3>

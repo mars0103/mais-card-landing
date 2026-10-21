@@ -106,6 +106,156 @@ const SCREENS = {
     <div class="a-tot"><div><small>Total ganho com indicações</small><strong>R$ 10,00</strong></div><span class="rn">${ico('wallet')}</span></div>
     <div class="a-toast a-toast--green">${ico('check')}Código copiado</div>
     ${nav('Indicar')}`,
+
+  trocarcoins: `
+    ${status('15:20', '58')}${titleBar('Trocar +Coins', ['help'])}
+    <div class="a-pad">
+      <div class="a-bal" style="margin-top:4px">
+        <div class="t"><small>Suas +Coins</small><div class="n"><strong class="js-tc-bal">61.800</strong>${ico('coins')}</div></div>
+      </div>
+      <h5 class="a-h">Quanto quer trocar?</h5>
+      <div class="a-input"><div><span>+Coins</span><strong class="js-tc-val">5.000</strong></div>${ico('swap')}</div>
+      <div class="a-chips js-tc-chips" style="margin-top:10px"><b data-n="1000">1.000</b><b data-n="2000">2.000</b><b data-n="5000" class="is-on">5.000</b><b data-n="10000">10.000</b></div>
+      <div class="a-row" style="margin-top:16px;border-style:dashed">${ico('wallet')}<span>Você recebe</span><strong class="js-tc-out" style="margin-left:auto">R$ 2,00</strong></div>
+    </div>
+    <button class="a-btn" type="button" tabindex="-1">${ico('check')}Confirmar troca</button>
+    ${nav('')}`,
+
+  saque: `
+    ${status('09:12', '71')}${titleBar('Saque via Pix', ['help'])}
+    <div class="a-pad">
+      <div class="a-yc" style="margin-top:4px">
+        <div class="top"><div class="row"><span>Saldo disponível</span>${ico('eye')}</div><strong>R$ 500,00</strong><small>Disponível para saque</small></div>
+      </div>
+      <h5 class="a-h">Quanto você quer sacar?</h5>
+      <div class="a-input"><div><span>R$</span><strong class="js-sq-val">150,00</strong></div><em>Usar máximo</em></div>
+      <div class="a-chips js-sq-chips" style="margin-top:10px"><b data-n="50">50</b><b data-n="100">100</b><b data-n="150" class="is-on">150</b><b data-n="500">500</b></div>
+      <div class="a-row">${ico('pix')}<span>Chave Pix cadastrada</span><strong style="margin-left:auto">CPF ***</strong></div>
+    </div>
+    <button class="a-btn" type="button" tabindex="-1">${ico('pix')}Confirmar saque</button>
+    <div class="a-toast js-sq-toast">${ico('check')}Saque solicitado · cai em instantes</div>
+    ${nav('')}`,
+
+  contamais: `
+    <div class="a-wallet-top">${status('10:40', '64')}
+      <div class="t">${ico('bank')}<h4>Conta+</h4></div>
+      <p>Sua conta digital dentro do app MAIS.</p>
+    </div>
+    <div class="a-balance">
+      <div class="c1"><span class="lbl">${ico('bank')}Conta+</span><small>Ag 0001 · Conta 00061-8</small></div>
+      <div class="c2"><span class="lbl">Saldo${ico('eye')}</span><strong>R$ 212,40</strong></div>
+      <div class="c3"><span class="lbl">Bloqueado${ico('lock')}</span><strong>R$ 0,00</strong></div>
+    </div>
+    <div class="a-acts" style="margin-top:52px;border-top:0">
+      <div>${ico('pix')}Pix</div><div>${ico('doc')}Boleto</div><div>${ico('card')}Cartão<br />virtual</div><div>${ico('send')}Transferir</div>
+    </div>
+    <div class="a-ext">
+      <h5 class="a-h" style="font-size:14px;margin:14px 0 10px">Movimentações</h5>
+      <ul class="a-list">
+        <li><span class="ic">${ico('send')}</span><span class="tx"><b>Transferência enviada</b><small>Hoje</small></span><span class="v n">- R$ 80,00</span></li>
+        <li><span class="ic">${ico('pix')}</span><span class="tx"><b>Pix recebido</b><small>Ontem</small></span><span class="v p">+ R$ 220,00</span></li>
+      </ul>
+    </div>
+    ${nav('')}`,
+
+  transferencias: `
+    ${status('11:05', '77')}${titleBar('Transferir', ['help'])}
+    <div class="a-pad">
+      <h5 class="a-h" style="margin-top:4px">Pra quem você quer mandar?</h5>
+      <div class="a-contacts js-tr-contacts">
+        <button type="button" class="is-on" data-name="Ana">${ico('user')}<small>Ana</small></button>
+        <button type="button" data-name="Bruno">${ico('user')}<small>Bruno</small></button>
+        <button type="button" data-name="Duda">${ico('user')}<small>Duda</small></button>
+        <button type="button" data-name="Chave Pix">${ico('pix')}<small>Chave Pix</small></button>
+      </div>
+      <h5 class="a-h">Quanto vai mandar?</h5>
+      <div class="a-input"><div><span>R$</span><strong class="js-tr-val">80,00</strong></div></div>
+      <div class="a-row" style="margin-top:12px">${ico('send')}<span>Para</span><strong class="js-tr-to" style="margin-left:auto">Ana</strong></div>
+    </div>
+    <button class="a-btn js-tr-btn" type="button" tabindex="-1">${ico('send')}Transferir agora</button>
+    <div class="a-toast js-tr-toast">${ico('check')}Transferência enviada</div>
+    ${nav('')}`,
+
+  adicionarsaldo: `
+    ${status('16:40', '52')}${titleBar('Adicionar saldo', ['help'])}
+    <div class="a-pad">
+      <h5 class="a-h" style="margin-top:4px">Quanto você quer adicionar?</h5>
+      <div class="a-input"><div><span>R$</span><strong class="js-as-val">100,00</strong></div></div>
+      <div class="a-chips js-as-chips" style="margin-top:10px"><b data-n="50">50</b><b data-n="100" class="is-on">100</b><b data-n="200">200</b><b data-n="500">500</b></div>
+      <div class="a-qr">
+        <div class="a-qr__code js-as-qr">${ico('qrcode')}</div>
+        <p class="js-as-status">Aponte a câmera do seu banco pro QR Code</p>
+      </div>
+    </div>
+    <button class="a-btn" type="button" tabindex="-1">${ico('qrcode')}Gerar QR Code Pix</button>
+    <div class="a-toast js-as-toast">${ico('check')}Saldo adicionado · <b class="js-as-amt">R$ 100,00</b></div>
+    ${nav('')}`,
+
+  linkpagamento: `
+    ${status('17:02', '48')}${titleBar('Link de pagamento', ['help'])}
+    <div class="a-pad">
+      <h5 class="a-h" style="margin-top:4px">Valor da cobrança</h5>
+      <div class="a-input"><div><span>R$</span><strong>120,00</strong></div></div>
+      <h5 class="a-h">Descrição</h5>
+      <div class="a-row" style="margin-top:0">${ico('doc')}<span>Sinal da encomenda</span></div>
+      <h5 class="a-h">Seu link</h5>
+      <div class="a-row">${ico('link')}<span class="js-lp-link">mais.cc/cobrar/8f2k</span><button type="button" class="js-lp-copy">${ico('copy')}<span>Copiar</span></button></div>
+      <div class="a-row" style="border-style:dashed">${ico('share')}<span>Compartilhar link</span></div>
+      <h5 class="a-h">Cobranças recentes</h5>
+      <div class="a-kv"><span>Sinal da encomenda</span><b style="color:var(--a-green)">Pago</b></div>
+      <div class="a-kv"><span>Ajuste de frete</span><b style="color:var(--a-gold)">Pendente</b></div>
+    </div>
+    ${nav('')}`,
+
+  cofre: `
+    ${status('12:30', '69')}${titleBar('Cofre+', ['help'])}
+    <div class="a-pad">
+      <div class="a-bal a-bal--vault" style="margin-top:4px">
+        <div class="t"><small>Guardado no Cofre+</small><div class="n"><strong class="js-cf-total">R$ 0</strong></div></div>
+        <div class="f">${ico('trophy')}<span>3 cofres ativos</span></div>
+      </div>
+      <div class="a-goal" style="margin-top:14px">
+        <div class="r"><div><small>Meta · Viagem</small><b>R$ 1.200 de R$ 2.000</b></div><em>60%</em></div>
+        <div class="a-bar-t" style="margin-top:10px"><i class="js-cf-bar" style="width:0%"></i></div>
+      </div>
+      <div class="a-row">${ico('vault')}<span>Reserva de emergência</span><strong style="margin-left:auto">R$ 540,00</strong></div>
+      <div class="a-row">${ico('gift')}<span>Presente de fim de ano</span><strong style="margin-left:auto">R$ 180,00</strong></div>
+    </div>
+    <button class="a-btn" type="button" tabindex="-1">${ico('plus')}Criar novo cofre</button>
+    ${nav('')}`,
+
+  recarga: `
+    ${status('19:15', '33')}${titleBar('Recarga de celular', ['help'])}
+    <div class="a-pad">
+      <h5 class="a-h" style="margin-top:4px">Número</h5>
+      <div class="a-row" style="margin-top:0">${ico('phone')}<span>(62) 9 9999-0000</span></div>
+      <h5 class="a-h">Operadora</h5>
+      <div class="a-chips js-rc-op"><b class="is-on">Vivo</b><b>Claro</b><b>TIM</b><b>Oi</b></div>
+      <h5 class="a-h">Valor</h5>
+      <div class="a-chips js-rc-val"><b data-n="15">R$ 15</b><b data-n="30" class="is-on">R$ 30</b><b data-n="50">R$ 50</b><b data-n="100">R$ 100</b></div>
+    </div>
+    <button class="a-btn js-rc-btn" type="button" tabindex="-1">${ico('phone')}Recarregar agora</button>
+    <div class="a-toast js-rc-toast">${ico('check')}Recarga de <b class="js-rc-amt">R$ 30</b> confirmada</div>
+    ${nav('')}`,
+
+  boletos: `
+    ${status('20:02', '41')}${titleBar('Pagar boleto', ['help'])}
+    <div class="a-pad">
+      <div class="a-row" style="margin-top:4px">${ico('barcode')}<span>Digite ou escaneie o código</span></div>
+      <div class="a-row" style="border-style:dashed">${ico('camera')}<span>Escanear com a câmera</span></div>
+      <div class="a-card" style="margin-top:14px;padding:14px 16px">
+        <div class="a-kv"><span>Beneficiário</span><b>Energia Goiás</b></div>
+        <div class="a-kv"><span>Vencimento</span><b>25/10/2026</b></div>
+        <div class="a-kv"><span>Valor</span><b>R$ 184,30</b></div>
+      </div>
+      <h5 class="a-h">Pagos recentemente</h5>
+      <ul class="a-list">
+        <li><span class="ic">${ico('doc')}</span><span class="tx"><b>Internet</b><small>05 de out.</small></span><span class="v p">Pago</span></li>
+        <li><span class="ic">${ico('doc')}</span><span class="tx"><b>Água</b><small>02 de out.</small></span><span class="v p">Pago</span></li>
+      </ul>
+    </div>
+    <button class="a-btn" type="button" tabindex="-1">${ico('barcode')}Pagar boleto</button>
+    ${nav('')}`,
 };
 
 const fmt = (n) => n.toLocaleString('pt-BR');
@@ -174,6 +324,49 @@ export const screens = {
       tl.to(o, { i: full.length, duration: 0.9, ease: 'none', onUpdate: () => (code.textContent = full.slice(0, Math.round(o.i))) }, 0)
         .to($('.a-how li'), { opacity: 1, duration: 0.4, stagger: 0.22 }, 0.5);
     }
+    if (name === 'trocarcoins') {
+      this.setTrocar(5000, true);
+    }
+    if (name === 'saque') {
+      this.setSaque(150);
+      gsap.set($('.js-sq-toast'), { opacity: 0, y: -10 });
+      tl.to($('.js-sq-toast'), { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0.9)
+        .to($('.js-sq-toast'), { opacity: 0, y: -10, duration: 0.4 }, 3.2);
+    }
+    if (name === 'contamais') {
+      gsap.set($('.a-list li'), { opacity: 0, y: 18 });
+      gsap.set($('.a-acts > div'), { opacity: 0, y: 10 });
+      tl.to($('.a-acts > div'), { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 }, 0.1)
+        .to($('.a-list li'), { opacity: 1, y: 0, duration: 0.5, stagger: 0.14, ease: 'power3.out' }, 0.4);
+    }
+    if (name === 'transferencias') {
+      this.setTransfer('Ana', 80);
+      gsap.set($('.js-tr-toast'), { opacity: 0, y: -10 });
+    }
+    if (name === 'adicionarsaldo') {
+      this.setAddSaldo(100, true);
+    }
+    if (name === 'linkpagamento') {
+      gsap.set($('.a-kv'), { opacity: 0, x: -10 });
+      tl.to($('.a-kv'), { opacity: 1, x: 0, duration: 0.4, stagger: 0.16 }, 0.3);
+    }
+    if (name === 'cofre') {
+      const total = el.querySelector('.js-cf-total');
+      const o = { v: 0 };
+      gsap.set($('.js-cf-bar'), { width: '0%' });
+      tl.to(o, { v: 1920, duration: 1.4, ease: 'power3.out', onUpdate: () => (total.textContent = `R$ ${fmt(Math.round(o.v))}`) }, 0)
+        .to($('.js-cf-bar'), { width: '60%', duration: 1.1, ease: 'power3.out' }, 0.2);
+    }
+    if (name === 'recarga') {
+      this.setRecarga(30);
+      gsap.set($('.js-rc-toast'), { opacity: 0, y: -10 });
+      tl.to($('.js-rc-toast'), { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' }, 1)
+        .to($('.js-rc-toast'), { opacity: 0, y: -10, duration: 0.4 }, 3.3);
+    }
+    if (name === 'boletos') {
+      gsap.set($('.a-list li'), { opacity: 0, y: 18 });
+      tl.to($('.a-list li'), { opacity: 1, y: 0, duration: 0.5, stagger: 0.14, ease: 'power3.out' }, 0.3);
+    }
     this.tl = tl;
   },
 
@@ -200,5 +393,85 @@ export const screens = {
     if (!t) return;
     gsap.fromTo(t, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(1.6)' });
     gsap.to(t, { opacity: 0, y: -10, duration: 0.4, delay: 1.8 });
+  },
+
+  setTrocar(n, animate = false) {
+    this.trocar = n;
+    const el = this.el('trocarcoins');
+    if (!el) return;
+    const val = el.querySelector('.js-tc-val');
+    const out = el.querySelector('.js-tc-out');
+    el.querySelectorAll('.js-tc-chips b').forEach((b) => b.classList.toggle('is-on', Number(b.dataset.n) === n));
+    val.textContent = fmt(n);
+    const reais = n / 2500;
+    if (animate) {
+      const o = { v: 0 };
+      gsap.to(o, { v: reais, duration: 0.9, delay: 0.3, ease: 'power3.out', onUpdate: () => (out.textContent = `R$ ${money(o.v)}`) });
+    } else {
+      out.textContent = `R$ ${money(reais)}`;
+    }
+  },
+
+  setSaque(n) {
+    const el = this.el('saque');
+    if (!el) return;
+    el.querySelector('.js-sq-val').textContent = money(n);
+    el.querySelectorAll('.js-sq-chips b').forEach((b) => b.classList.toggle('is-on', Number(b.dataset.n) === n));
+  },
+
+  setTransfer(name, value) {
+    const el = this.el('transferencias');
+    if (!el) return;
+    el.querySelector('.js-tr-to').textContent = name;
+    if (value != null) el.querySelector('.js-tr-val').textContent = money(value);
+    el.querySelectorAll('.js-tr-contacts button').forEach((b) => b.classList.toggle('is-on', b.dataset.name === name));
+  },
+
+  sendTransfer() {
+    const t = this.el('transferencias')?.querySelector('.js-tr-toast');
+    if (!t) return;
+    gsap.fromTo(t, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(1.6)' });
+    gsap.to(t, { opacity: 0, y: -10, duration: 0.4, delay: 1.8 });
+  },
+
+  setAddSaldo(n, animate = false) {
+    this.addSaldo = n;
+    const el = this.el('adicionarsaldo');
+    if (!el) return;
+    el.querySelector('.js-as-val').textContent = money(n);
+    el.querySelectorAll('.js-as-chips b').forEach((b) => b.classList.toggle('is-on', Number(b.dataset.n) === n));
+    const amt = el.querySelector('.js-as-amt');
+    if (amt) amt.textContent = `R$ ${money(n)}`;
+    const status = el.querySelector('.js-as-status');
+    const toast = el.querySelector('.js-as-toast');
+    const qr = el.querySelector('.js-as-qr');
+    gsap.killTweensOf([qr, toast]);
+    status.textContent = 'Aponte a câmera do seu banco pro QR Code';
+    gsap.set(toast, { opacity: 0, y: -10 });
+    if (!animate) return;
+    gsap.fromTo(qr, { scale: 0.92 }, { scale: 1, duration: 1.1, ease: 'sine.inOut', repeat: 3, yoyo: true });
+    gsap.delayedCall(2.3, () => {
+      status.textContent = 'Pago! Saldo adicionado.';
+      gsap.to(toast, { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' });
+    });
+  },
+
+  setRecarga(value, op) {
+    const el = this.el('recarga');
+    if (!el) return;
+    if (value != null) {
+      el.querySelectorAll('.js-rc-val b').forEach((b) => b.classList.toggle('is-on', Number(b.dataset.n) === value));
+      const amt = el.querySelector('.js-rc-amt');
+      if (amt) amt.textContent = `R$ ${value}`;
+    }
+    if (op != null) el.querySelectorAll('.js-rc-op b').forEach((b) => b.classList.toggle('is-on', b.textContent === op));
+  },
+
+  flashCopiedLink() {
+    const btn = this.el('linkpagamento')?.querySelector('.js-lp-copy span');
+    if (!btn) return;
+    const prev = btn.textContent;
+    btn.textContent = 'Copiado!';
+    setTimeout(() => (btn.textContent = prev), 1800);
   },
 };
