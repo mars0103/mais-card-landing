@@ -1,8 +1,12 @@
 
 
+@media (max-width: 1320px) {
+  .hud-nav { gap: 16px; }
+  .hud-nav a, .hud-mega__btn { font-size: 0.75rem; }
+  .hud-badge { padding: 0 13px; }
+  .hud-cta { padding: 0 16px; }
+}
 @media (max-width: 1100px) {
-  .hud-nav { gap: 22px; }
-  .hud-nav a { font-size: 0.8125rem; }
   .cards3 { gap: 16px; }
 }
 

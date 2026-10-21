@@ -1,17 +1,4 @@
 (function () {
-  function fitPhones() {
-    document.querySelectorAll('.phone').forEach(function (phone) {
-      var vp = phone.querySelector('.phone__viewport');
-      var box = phone.querySelector('.phone__screen');
-      if (!vp || !box) return;
-      var ps = parseFloat(getComputedStyle(phone).getPropertyValue('--ps')) || 0.78;
-      box.style.height = Math.ceil(vp.scrollHeight * ps) + 'px';
-    });
-  }
-  fitPhones();
-  window.addEventListener('resize', fitPhones);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitPhones);
-
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
