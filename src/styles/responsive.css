@@ -25,7 +25,8 @@
   }
   .hud-nav a { font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; white-space: normal; text-align: right; display: block; padding: 16px 0; border-top: 1px solid rgba(13, 13, 13, 0.18); }
   .hud-nav > a:last-child { border-bottom: 1px solid rgba(13, 13, 13, 0.18); }
-  .hud-nav a::after { background: var(--ink); }
+  .hud-nav a.is-active::after, .hud-nav a:hover::after { transform: scaleX(0); }
+  .hud-nav a:active { opacity: 0.55; }
 
   .hud-mega { width: 100%; }
   .hud-mega__btn { width: 100%; justify-content: flex-end; font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; padding: 16px 0; border-top: 1px solid rgba(13, 13, 13, 0.18); }
@@ -37,7 +38,8 @@
   .hud-mega.is-open .hud-mega__panel { max-height: 900px; padding-bottom: 12px; transform: none; }
   .hud-mega__col { text-align: right; }
   .hud-mega__col h4 { color: var(--ink); opacity: 0.55; }
-  .hud-mega__col a { color: var(--ink); opacity: 0.85; font-size: 1.05rem; padding: 6px 0; white-space: normal; }
+  .hud-mega__col a { color: var(--ink); opacity: 0.85; font-size: 1.05rem; padding: 6px 0; white-space: normal; text-decoration: none; }
+  .hud-mega__col a:active { opacity: 0.5; }
   body.menu-open .hud-nav { z-index: 40; }
   body.menu-open .hud-badge { position: relative; z-index: 41; }
   body.menu-open .hud-nav { opacity: 1; visibility: visible; transition-delay: 0s; }
