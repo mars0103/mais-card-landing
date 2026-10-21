@@ -15,6 +15,14 @@ export const CHAPTERS = [
 
 const pad = (n) => String(n + 1).padStart(2, '0');
 
+export function goToHash(hash) {
+  const t = document.querySelector(hash);
+  if (!t) return false;
+  const beat = t.dataset.beatAnchor != null ? Number(t.dataset.beatAnchor) : undefined;
+  goTo(t.dataset.beatAnchor != null ? '#app' : t, beat);
+  return true;
+}
+
 export function initHud() {
   const rail = document.getElementById('hud-rail');
   rail.innerHTML = CHAPTERS.map((c, i) => `<button type="button" data-i="${i}" aria-label="Ir para ${c.title}">+</button>`).join('');
@@ -34,11 +42,7 @@ export function initHud() {
     if (path !== window.location.pathname) return; // outra página: deixa o navegador seguir o link normalmente
     e.preventDefault();
     document.body.classList.remove('menu-open');
-    const hash = href.slice(hashIdx);
-    const t = document.querySelector(hash);
-    if (!t) return;
-    const beat = a.dataset.beatLink != null ? Number(a.dataset.beatLink) : t.dataset.beatAnchor != null ? Number(t.dataset.beatAnchor) : undefined;
-    goTo(t.dataset.beatAnchor != null ? '#app' : t, beat);
+    goToHash(href.slice(hashIdx));
   });
 
   document.querySelectorAll('[data-mega]').forEach((mega) => {

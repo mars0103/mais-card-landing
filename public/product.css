@@ -83,7 +83,7 @@ img { max-width: 100%; display: block; }
 .phone__viewport { position: absolute; left: 0; top: 0; width: 393px; height: 850px; transform: scale(var(--ps)); transform-origin: 0 0; }
 .screen {
   --a-y: #FCC400; --a-ink: #141414; --a-mut: #6B6B6B; --a-line: #E9E9E9; --a-green: #1E9E4A; --a-gold: #E8A200; --a-red: #D32F2F;
-  position: relative; overflow: hidden; background: #fff; color: var(--a-ink); height: 100%;
+  position: relative; overflow: hidden; background: #fff; color: var(--a-ink);
   font: 500 14px/1.35 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 .screen .i { width: 1em; height: 1em; }

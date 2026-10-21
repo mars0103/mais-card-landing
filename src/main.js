@@ -13,7 +13,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { state } from './js/state.js';
 import { initSmooth } from './js/smooth.js';
-import { initHud, setChapter } from './js/hud.js';
+import { initHud, setChapter, goToHash } from './js/hud.js';
 import { initChapters, prepHeroIntro, playHeroIntro } from './js/chapters.js';
 import { createLoader } from './js/loader.js';
 import { Stage, webglAvailable } from './js/three/stage.js';
@@ -64,10 +64,19 @@ async function boot() {
   await loader.finish();
   html.classList.remove('is-loading');
   ScrollTrigger.refresh();
-  window.scrollTo(0, 0);
+  if (state.lenis) state.lenis.scrollTo(0, { immediate: true });
+  else window.scrollTo(0, 0);
   playHeroIntro();
   setChapter(0);
   state.stage?.setScene('hero', 0);
+
+  const hash = window.location.hash;
+  if (hash.length > 1) {
+    const t = document.querySelector(hash);
+    const sec = t?.closest('.chapter') || t;
+    const ci = sec ? Number(sec.dataset.chapter) : NaN;
+    if (goToHash(hash) && !Number.isNaN(ci)) setChapter(ci);
+  }
 }
 
 boot();
