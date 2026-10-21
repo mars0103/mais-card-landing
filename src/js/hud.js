@@ -10,7 +10,6 @@ export const CHAPTERS = [
   { id: 'pague', title: 'Pague com um toque' },
   { id: 'app', title: 'App tour' },
   { id: 'seguranca', title: 'Segurança e atendimento' },
-  { id: 'novidades', title: 'Novidades' },
   { id: 'comece', title: 'Comece agora' },
 ];
 
@@ -28,13 +27,29 @@ export function initHud() {
     const a = e.target.closest('a[data-nav]');
     if (!a) return;
     const href = a.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
+    if (!href) return;
+    const hashIdx = href.indexOf('#');
+    if (hashIdx === -1) return;
+    const path = hashIdx === 0 ? window.location.pathname : href.slice(0, hashIdx) || '/';
+    if (path !== window.location.pathname) return; // outra página: deixa o navegador seguir o link normalmente
     e.preventDefault();
     document.body.classList.remove('menu-open');
-    const t = document.querySelector(href);
+    const hash = href.slice(hashIdx);
+    const t = document.querySelector(hash);
     if (!t) return;
     const beat = a.dataset.beatLink != null ? Number(a.dataset.beatLink) : t.dataset.beatAnchor != null ? Number(t.dataset.beatAnchor) : undefined;
     goTo(t.dataset.beatAnchor != null ? '#app' : t, beat);
+  });
+
+  document.querySelectorAll('[data-mega]').forEach((mega) => {
+    const megaBtn = mega.querySelector('.hud-mega__btn');
+    megaBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mega.classList.toggle('is-open');
+      megaBtn.setAttribute('aria-expanded', String(mega.classList.contains('is-open')));
+    });
+    document.addEventListener('click', (e) => { if (!mega.contains(e.target)) mega.classList.remove('is-open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') mega.classList.remove('is-open'); });
   });
 
   const toggle = document.getElementById('menu-toggle');

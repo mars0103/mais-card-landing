@@ -10,7 +10,16 @@
     { "source": "/termos/carteira", "destination": "/termos/carteira/index.html" },
     { "source": "/termos/lgpd", "destination": "/termos/lgpd/index.html" },
     { "source": "/termos/comunicacoes", "destination": "/termos/comunicacoes/index.html" },
-    { "source": "/excluir-conta", "destination": "/excluir-conta/index.html" }
+    { "source": "/excluir-conta", "destination": "/excluir-conta/index.html" },
+    { "source": "/trocar-coins", "destination": "/trocar-coins/index.html" },
+    { "source": "/saque", "destination": "/saque/index.html" },
+    { "source": "/conta", "destination": "/conta/index.html" },
+    { "source": "/transferencias", "destination": "/transferencias/index.html" },
+    { "source": "/adicionar-saldo", "destination": "/adicionar-saldo/index.html" },
+    { "source": "/link-pagamento", "destination": "/link-pagamento/index.html" },
+    { "source": "/cofre", "destination": "/cofre/index.html" },
+    { "source": "/recarga", "destination": "/recarga/index.html" },
+    { "source": "/boletos", "destination": "/boletos/index.html" }
   ],
   "headers": [
     {

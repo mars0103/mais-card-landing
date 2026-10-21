@@ -118,6 +118,26 @@ body[data-theme='yellow'] .kicker { color: rgba(13, 13, 13, 0.8); }
 .hud-nav a:hover, .hud-nav a.is-active { opacity: 1; }
 .hud-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px; background: #fff; transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease); }
 .hud-nav a.is-active::after, .hud-nav a:hover::after { transform: scaleX(1); }
+
+.hud-mega { position: relative; }
+.hud-mega__btn { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; font: 500 0.8125rem/1 var(--font-b); color: #fff; opacity: 0.68; cursor: pointer; padding: 8px 0; transition: opacity 0.3s; }
+.hud-mega__btn:hover, .hud-mega.is-open .hud-mega__btn { opacity: 1; }
+.hud-mega__chev { width: 10px; height: 10px; transform: rotate(90deg); transition: transform 0.3s var(--ease); }
+.hud-mega.is-open .hud-mega__chev { transform: rotate(270deg); }
+.hud-mega__panel {
+  position: fixed; left: 50%; top: calc(var(--header-h) - 4px); width: min(920px, calc(100vw - 32px));
+  padding: 30px 32px; border-radius: 28px; background: #0D0D0D; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+  opacity: 0; visibility: hidden; transform: translate(-50%, -10px);
+  transition: opacity 0.3s, transform 0.3s var(--ease), visibility 0s 0.3s; z-index: 60;
+}
+.hud-mega:hover .hud-mega__panel, .hud-mega:focus-within .hud-mega__panel, .hud-mega.is-open .hud-mega__panel {
+  opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s;
+}
+.hud-mega__col h4 { font: 600 0.6875rem/1 var(--font-b); letter-spacing: 0.12em; text-transform: uppercase; color: var(--y); margin: 0 0 0.9rem; }
+.hud-mega__col a { display: block; font: 500 0.875rem/1.3 var(--font-b); color: #fff; opacity: 0.82; padding: 7px 0; transition: opacity 0.25s; }
+.hud-mega__col a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+
 .hud-cta {
   flex: none; display: inline-flex; align-items: center; height: 40px; padding: 0 22px; border-radius: 999px;
   background: var(--y); color: #0D0D0D; font: 700 0.8125rem/1 var(--font-b); white-space: nowrap;

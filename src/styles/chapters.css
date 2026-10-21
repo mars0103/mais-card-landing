@@ -195,9 +195,9 @@ body[data-theme='yellow'] .reward { color: #0D0D0D; }
 .tour__chips { position: absolute; inset: 0; pointer-events: none; }
 .tour__chips .chip { position: absolute; opacity: 0; will-change: transform, opacity; }
 .tour__legal { position: absolute; left: var(--gutter); bottom: 3.2vh; max-width: 26rem; opacity: 0.8; display: none; }
-.tour__dots { position: absolute; left: 50%; bottom: 30px; translate: -50% 0; display: flex; gap: 5px; max-width: 90vw; flex-wrap: wrap; justify-content: center; }
-.tour__dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); opacity: 0.25; transition: width 0.4s var(--ease), opacity 0.4s, border-radius 0.4s; }
-.tour__dots i.is-active { width: 20px; border-radius: 4px; opacity: 1; }
+.tour__dots { position: absolute; left: 50%; bottom: 30px; translate: -50% 0; display: flex; gap: 8px; }
+.tour__dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); opacity: 0.25; transition: width 0.4s var(--ease), opacity 0.4s, border-radius 0.4s; }
+.tour__dots i.is-active { width: 28px; border-radius: 4px; opacity: 1; }
 
 
 .sec__stage { display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding-bottom: 8vh; }
@@ -210,17 +210,10 @@ body[data-theme='yellow'] .reward { color: #0D0D0D; }
 .card3 h3 { font: 700 1.6rem/1.15 var(--font-d); margin-bottom: 0.7rem; }
 .card3 p { font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
 
-.roadmap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 2.6rem; list-style: none; }
-.roadmap__card { height: 100%; padding: 1.3rem 1.4rem 1.5rem; border-radius: 20px; background: var(--surface); border: 1.5px solid var(--line); display: flex; flex-direction: column; gap: 0.5rem; }
-.roadmap__when { font: 700 0.75rem/1 var(--font-b); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.roadmap__status { align-self: flex-start; padding: 5px 12px; border-radius: 999px; font: 700 0.7rem/1 var(--font-b); background: #fff; color: #0D0D0D; }
-.roadmap__item.is-live .roadmap__status { background: #0D0D0D; color: #FDC908; }
-.roadmap__item.is-live .roadmap__card { border-color: #0D0D0D; }
-.roadmap__list { font-size: 0.85rem; line-height: 1.5; color: var(--ink); margin-top: 0.2rem; }
-
 
 .cta__stage { display: flex; align-items: center; }
 .cta__copy { max-width: min(46rem, 50vw); position: relative; z-index: 3; }
+.cta__copy .lead { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .cta__title { font-size: clamp(3.8rem, 8.3vw, 8.75rem); line-height: 0.98; margin: 1rem 0 1.4rem; }
 .cta__actions { margin: 2rem 0 1.2rem; }
 .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1.6rem; }

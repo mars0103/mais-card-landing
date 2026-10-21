@@ -17,10 +17,23 @@
   .hud-nav {
     position: fixed; inset: 0; transform: none; z-index: -1; background: var(--bg); flex-direction: column; justify-content: center;
     align-items: stretch; gap: 0; padding: 0 var(--gutter); opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0s 0.4s;
+    overflow-y: auto;
   }
   .hud-nav a { font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; white-space: normal; text-align: right; display: block; padding: 16px 0; border-top: 1px solid rgba(13, 13, 13, 0.18); }
-  .hud-nav a:last-child { border-bottom: 1px solid rgba(13, 13, 13, 0.18); }
+  .hud-nav > a:last-child { border-bottom: 1px solid rgba(13, 13, 13, 0.18); }
   .hud-nav a::after { background: var(--ink); }
+
+  .hud-mega { width: 100%; }
+  .hud-mega__btn { width: 100%; justify-content: flex-end; font: 700 clamp(1.5rem, 6.4vw, 1.9rem)/1.25 var(--font-d); color: var(--ink); opacity: 1; padding: 16px 0; border-top: 1px solid rgba(13, 13, 13, 0.18); }
+  .hud-mega__chev { width: 15px; height: 15px; }
+  .hud-mega__panel {
+    position: static; transform: none; width: 100%; padding: 0; border-radius: 0; background: transparent; box-shadow: none;
+    grid-template-columns: 1fr; gap: 16px; max-height: 0; min-height: 0; opacity: 1; visibility: visible; overflow: hidden; transition: max-height 0.4s var(--ease);
+  }
+  .hud-mega.is-open .hud-mega__panel { max-height: 900px; padding-bottom: 12px; }
+  .hud-mega__col { text-align: right; }
+  .hud-mega__col h4 { color: var(--ink); opacity: 0.55; }
+  .hud-mega__col a { color: var(--ink); opacity: 0.85; font-size: 1.05rem; padding: 6px 0; }
   body.menu-open .hud-nav { z-index: 40; }
   body.menu-open .hud-badge { position: relative; z-index: 41; }
   body.menu-open .hud-nav { opacity: 1; visibility: visible; transition-delay: 0s; }
@@ -118,7 +131,6 @@
 
   
   .cards3 { grid-template-columns: 1fr; gap: 12px; }
-  .roadmap { grid-template-columns: 1fr; gap: 12px; }
   .card3 { min-height: 0; padding: 1.3rem 1.4rem; display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; align-items: center; }
   .card3__ico { grid-row: span 2; margin: 0; width: 48px; height: 48px; }
   .card3 h3 { font-size: 1.2rem; margin: 0; }
