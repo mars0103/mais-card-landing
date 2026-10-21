@@ -1,4 +1,31 @@
 (function () {
+  function fitPhones() {
+    document.querySelectorAll('.phone').forEach(function (phone) {
+      var vp = phone.querySelector('.phone__viewport');
+      var box = phone.querySelector('.phone__screen');
+      if (!vp || !box) return;
+      var ps = parseFloat(getComputedStyle(phone).getPropertyValue('--ps')) || 0.78;
+      box.style.height = Math.ceil(vp.scrollHeight * ps) + 'px';
+    });
+  }
+  fitPhones();
+  window.addEventListener('resize', fitPhones);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitPhones);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+    setTimeout(function () {
+      document.querySelectorAll('[data-reveal]:not(.is-in)').forEach(function (el) { el.classList.add('is-in'); });
+    }, 2500);
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+  }
+
   var toggle = document.getElementById('menu-toggle');
   if (toggle) {
     toggle.addEventListener('click', function () {

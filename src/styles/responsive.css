@@ -139,7 +139,7 @@
 
   
   .cta__copy { max-width: 100%; }
-  .cta__title { font-size: clamp(3rem, 14vw, 4.4rem); margin: 0.6rem 0 0.8rem; }
+  .cta__title { font-size: clamp(3rem, 14vw, 4.4rem); margin: 0.6rem 0 0.8rem; white-space: nowrap; }
   .cta__actions, .cta__copy .lead { display: none; }
   .stores { margin-bottom: 1rem; }
   .stores li { height: 44px; padding: 0 1rem; }
